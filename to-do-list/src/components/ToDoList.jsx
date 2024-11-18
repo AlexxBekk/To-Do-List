@@ -6,6 +6,9 @@ import "../styles/Globals.css";
 function ToDoList() {
   const [tasksList, setTasksList] = useState([]);
 
+  const noTasks = tasksList.length === 0;
+  const allTasksCompleted = !noTasks && tasksList.every((task) => task.isCompleted)
+
   function addTask(task) {
     setTasksList([...tasksList, task]);
   }
@@ -26,7 +29,7 @@ function ToDoList() {
     <div className="container">
       <h1>TO-DO</h1>
       <TaskInput onAdd={addTask} />
-      {tasksList.length === 0
+      {noTasks
         ? null
         : tasksList.map((task) => (
           <ToDoItem
@@ -36,11 +39,8 @@ function ToDoList() {
             onDelete={deleteTask}
           />
         ))}
-      {!tasksList.length && <h2>Задач нет</h2>}
-      {tasksList.length !== 0 &&
-        tasksList.every((task) => task.isCompleted) && (
-          <h2 className="allDone">Все задачи выполнены! \ ^О^ /</h2>
-        )}
+
+      {noTasks ? <h2>Задач нет</h2> : allTasksCompleted && <h2 className="allDone">Все задачи выполнены! \ ^О^ /</h2>}
     </div>
   );
 }

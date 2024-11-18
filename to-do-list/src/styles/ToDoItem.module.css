@@ -19,7 +19,7 @@
   background: none;
   color: var(--color-negative);
 }
-.isDoneTask {
+.isCompletedTask {
   text-decoration: line-through;
   color: var(--color-positive);
   }

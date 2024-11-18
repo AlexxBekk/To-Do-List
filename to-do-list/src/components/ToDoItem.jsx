@@ -10,7 +10,7 @@ function ToDoItem({ task, onToggle, onDelete }) {
           checked={task.isCompleted}
           onChange={() => onToggle(task.id)}
         />
-        <span className={`${task.isCompleted && styles.isDoneTask}`}>
+        <span className={`${task.isCompleted && styles.isCompletedTask}`}>
           {task.text}
         </span>
       </div>
