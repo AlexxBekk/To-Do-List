@@ -1,0 +1,24 @@
+form {
+  width: 100%;
+  height: 36px;
+  display: flex;
+  gap: 8px;
+}
+
+.taskInput {
+  flex-grow: 1;
+  padding: 8px 20px;
+  border: solid var(--color-neutral) 1px;
+  border-radius: 7px;
+  font-size: inherit;
+}
+
+input::placeholder{
+  font-size: inherit;
+  color: var(--color-neutral);
+}
+
+.taskAdditionBtn {
+  background-color: var(--color-positive);
+}
+
